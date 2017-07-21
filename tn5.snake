@@ -118,9 +118,12 @@ rule bamToBed:
 ## for each read, find out which strain it maps best to and use this mapping information
 rule combine:
     input:
-        bam=expand('%s/mapped/{{name}}_{species}.bam' % (OUTDIR), species=config['bowtie_index'].keys())
+        bam=expand('{{outdir}}/mapped/{{name}}_{species}.bam',
+                   species=config['bowtie_index'].keys())
     output:
-        '%s/combined/{name}.bam' % (OUTDIR)
+        '{outdir}/combined/{name}.bam'
+    params:
+        min_mapq=config['min_mapq']
     script:
         'combine_bam.py'
 

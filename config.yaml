@@ -108,6 +108,8 @@ max_dist:
     fwd: 500
     rev: 20
 
+min_mapq: 0
+
 min_depth: 5
 
 primer:
