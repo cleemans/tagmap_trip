@@ -104,9 +104,6 @@ max_pair_dist: 1500
 
 max_gap: 5
 
-max_dist:
-    fwd: 500
-    rev: 20
 
 min_mapq: 0
 

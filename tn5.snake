@@ -30,6 +30,8 @@ rule cat_insertions:
                name=name_list)
     output:
         '{outdir}/insertions.gff'
+    shell:
+        'cat {input} | sort -k1,1 -k4,2n > {output}'
 
 ## create bed file with insertions
 rule insertions_bed:
